@@ -224,6 +224,9 @@
 
 - (UIDatePicker *)createDatePicker:(NSMutableDictionary *)options frame:(CGRect)frame {
   UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:frame];
+  if (@available(iOS 13.4, *)) {
+    datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+  }   
   return datePicker;
 }
 
